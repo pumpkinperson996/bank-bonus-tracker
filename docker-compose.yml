@@ -1,0 +1,10 @@
+services:
+  bankdd:
+    image: ghcr.io/pumpkinperson996/bank-bonus-tracker:latest
+    build: .
+    ports:
+      - '3000:3000'
+    volumes:
+      # everything (offers, accounts, settings incl. API key) lives in this folder
+      - ./data:/data
+    restart: unless-stopped
